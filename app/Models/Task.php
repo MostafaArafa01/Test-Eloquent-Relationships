@@ -13,6 +13,11 @@ class Task extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'users_id');
+        return $this->belongsTo(User::class, 'users_id')->withDefault();
+    }
+    public function comments()
+    {
+        // TASK: add the code here for two-level relationship
+        return $this->hasMany(Comment::class);
     }
 }
